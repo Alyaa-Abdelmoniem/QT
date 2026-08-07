@@ -32,7 +32,3 @@ The application displays:
 - University
 - City
 - Email
-
-## Author
-
-Alyaa Abdelmoniem
