@@ -1,0 +1,45 @@
+E-Commerce App (Qt Quick QML)
+
+Overview
+
+This project is a simple E-Commerce application developed using Qt Quick (QML). It demonstrates basic navigation between screens and displays different product categories through a modern user interface.
+
+Features
+
+* Splash Screen
+* Automatic navigation after 3 seconds
+* Home Screen
+* Product Categories:
+    * Cars
+    * Computers
+    * Phones
+    * Courses
+    * Homes
+* Clean and responsive QML interface
+* Implemented using QML only (No C++ logic)
+
+Technologies Used
+
+* Qt 6
+* Qt Quick
+* QML
+* JavaScript (inside QML when needed)
+
+Project Structure
+
+* main.qml – Application entry point
+* SplashScreen.qml – Splash screen
+* HomeScreen.qml – Main home screen
+* CategoryCard.qml – Reusable category component
+* assets/ – Images and icons
+
+How to Run
+
+1. Open the project using Qt Creator.
+2. Configure the Qt Kit.
+3. Build the project.
+4. Run the application.
+
+Output
+
+The application starts with a splash screen, waits for 3 seconds, then automatically opens the Home Screen where users can browse the available categories.
