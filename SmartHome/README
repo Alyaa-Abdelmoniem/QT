@@ -1,0 +1,53 @@
+# Smart Home Dashboard
+
+## Overview
+Smart Home Dashboard is a Qt Quick (QML) application that simulates a smart home control system. Users can log in, view connected smart devices, monitor their power usage, control device status, and access application settings.
+
+## Features
+- Login screen with username and password validation.
+- Dashboard displaying smart home devices.
+- Turn devices ON/OFF using switches.
+- View device power usage with progress bars.
+- Settings page with:
+  - Language selection.
+  - Brightness control.
+  - Temperature control.
+  - Notification settings.
+- Navigation using StackView.
+
+## Technologies Used
+- C++
+- Qt 6
+- Qt Quick (QML)
+- Qt Quick Controls
+- CMake
+
+## Project Structure
+```
+SmartHome/
+│── main.cpp
+│── Main.qml
+│── LoginPage.qml
+│── DashboardPage.qml
+│── SettingsPage.qml
+│── CMakeLists.txt
+└── images/
+    ├── home.png
+    ├── light.png
+    ├── fan.png
+    ├── ac.png
+    ├── garage.png
+    └── user.png
+```
+
+## How to Run
+1. Open the project using Qt Creator.
+2. Open `CMakeLists.txt`.
+3. Configure the project.
+4. Build and Run.
+
+## Application Flow
+1. User enters a username and password.
+2. After successful login, the dashboard is displayed.
+3. Users can control smart devices and monitor their usage.
+4. The Settings page allows customization of application preferences.
