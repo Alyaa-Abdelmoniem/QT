@@ -1,0 +1,52 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(media_player VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(Qt6 REQUIRED COMPONENTS
+    Quick
+    QuickControls2
+    Multimedia
+    QuickDialogs2
+)
+
+qt_standard_project_setup(REQUIRES 6.10)
+
+qt_add_executable(appmedia_player
+    main.cpp
+)
+
+qt_add_qml_module(appmedia_player
+    URI media_player
+
+    QML_FILES
+        Main.qml
+
+    SOURCES
+        player.h
+        player.cpp
+        videoplayer.h
+        videoplayer.cpp
+        MediaController.h
+        MediaController.cpp
+        LocalMedia.h
+        LocalMedia.cpp
+        RadioController.h
+        RadioController.cpp
+        BluetoothController.h
+        BluetoothController.cpp
+)
+
+target_link_libraries(appmedia_player PRIVATE
+    Qt6::Quick
+    Qt6::QuickControls2
+    Qt6::Multimedia
+    Qt6::QuickDialogs2
+)
+
+set_target_properties(appmedia_player PROPERTIES
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
+)
