@@ -1,0 +1,57 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
+#include <QObject>
+#include <QString>
+#include <QList>
+#include <QUrl>
+#include <QMediaPlayer>
+#include <QAudioOutput>
+#include <QAudioDevice>
+
+class Player : public QObject
+{
+    Q_OBJECT
+
+public:
+    explicit Player(QObject *parent = nullptr);
+
+    void play();
+    void pause();
+
+    void next();
+    void previous();
+
+    void setMuted(bool muted);
+    void setVolume(int volume);
+
+    void setPlaylist(const QList<QUrl> &playlist);
+    void setAudioDevice(const QAudioDevice &device);
+
+    qint64 position() const;
+    qint64 duration() const;
+
+    int volume() const;
+    bool isMuted() const;
+
+    QMediaPlayer::PlaybackState playbackState() const;
+
+signals:
+    void positionChanged();
+    void durationChanged();
+    void volumeChanged();
+    void mutedChanged();
+    void playbackStateChanged();
+
+    void errorOccurred(const QString &message);
+
+protected:
+    QMediaPlayer *m_player;
+    QAudioOutput *m_audioOutput;
+
+private:
+    QList<QUrl> m_playlist;
+    int m_currentIndex;
+};
+
+#endif
